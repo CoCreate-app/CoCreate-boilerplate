@@ -1,9 +1,14 @@
-# CoCreate-xxx
+![GitHub file size in bytes](https://img.shields.io/github/size/CoCreate-app/CoCreate-boilerplate/dist/CoCreate-boilerplate.min.js?label=minified%20size) 
+![GitHub package.json version](https://img.shields.io/github/package-json/v/CoCreate-app/CoCreate-boilerplate)
+![GitHub](https://img.shields.io/github/license/CoCreate-app/CoCreate-boilerplate) 
+![GitHub labels](https://img.shields.io/github/labels/CoCreate-app/CoCreate-boilerplate/help%20wanted)
+
+# CoCreate-boilerplate
 A simple HTML5 and pure javascript component. Easy configuration using data-attributes and highly styleable.
 
 ![CoCreate](https://cdn.cocreate.app/logo.png)
 
-[CoCreate Docs](https://cocreate.app/documentation/CoCreate-xxx)
+[CoCreate Docs](https://cocreate.app/documentation/CoCreate-boilerplate)
 
 
 We want this library to be community-driven, and CoCreate led. We need your help to realize this goal. To help make sure we are building the right things in the right order, we ask that you create [issues](https://github.com/CoCreate-app/Realtime_Admin_CRM_and_CMS/issues) and [pull requests](https://github.com/CoCreate-app/Realtime_Admin_CRM_and_CMS/pulls) or merely upvote or comment on existing issues or pull requests.
@@ -22,7 +27,7 @@ We appreciate your continued support, thank you!
 <a name="announcements"></a>
 # Announcements
 
-All updates to this library are documented in our [CHANGELOG](https://github.com/CoCreate-app/CoCreate-industry/blob/master/CHANGELOG.md) and [releases](https://github.com/CoCreate-app/CoCreate-xxx/releases). You may also subscribe to email for releases and breaking changes. 
+All updates to this library are documented in our [CHANGELOG](https://github.com/CoCreate-app/CoCreate-industry/blob/master/CHANGELOG.md) and [releases](https://github.com/CoCreate-app/CoCreate-boilerplate/releases). You may also subscribe to email for releases and breaking changes. 
 
 <a name="roadmap"></a>
 # Roadmap
@@ -33,11 +38,11 @@ If you are interested in the future direction of this project, please take a loo
 <a name="about"></a>
 # About
 
-CoCreate-xxx is guided and supported by the CoCreate Developer Experience Team.
+CoCreate-boilerplate is guided and supported by the CoCreate Developer Experience Team.
 
 Please Email the Developer Experience Team [here](mailto:develop@cocreate.app) in case of any queries.
 
-CoCreate-xxx is maintained and funded by CoCreate. The names and logos for CoCreate are trademarks of CoCreate, LLC.
+CoCreate-boilerplate is maintained and funded by CoCreate. The names and logos for CoCreate are trademarks of CoCreate, LLC.
 
 <a name="contribute"></a>
 # How to Contribute
