@@ -1,33 +1,40 @@
 
-function toolbar() {
+function toolbar(selector, event, frame) {
   try {
-    let canvasIframe = document.querySelector("#canvas");
-    let canvasWindow = canvasIframe.contentWindow;
-    let canvas = canvasIframe.contentDocument || canvasWindow.document;
-    let selected;
+    
+    let Window,Document, frameElement;
+    if(!frame )
+    {
+      frameElement = frame.body;
+      Document = document
+      Window = window;
+    }
+    else
+    {
+      frameElement = frame;
+      Window = frame.contentWindow;
+      Document = Window.document || Window.contentDocument;
+    }
 
-    let hoverBox = document.getElementById("hoveredElementcoc");
+    let hoverBox = document.querySelector(selector);
     if (hoverBox) {
       let toolbar;
       toolbar = hoverBox.querySelector(':scope .toolbar');
       if(!toolbar ) toolbar = {offsetHeight: 0}
 
-      canvas.addEventListener("mouseover", (e) => {
+      Document.addEventListener(event, (e) => {
         let element = e.target;
-        if (element.id === "selectedElememtcoc") return;
-        if (element === selected) return;
-
         hoverBox.style.display = "block";
         hoverBox.style.top =
-          canvasIframe.offsetTop +
+          frameElement.offsetTop +
           element.offsetTop +
-          canvasWindow.scrollY -
+          Window.scrollY -
           toolbar.offsetHeight +
           "px";
         hoverBox.style.left =
-          canvasIframe.offsetLeft +
+          frameElement.offsetLeft +
           element.offsetLeft +
-          canvasWindow.scrollX +
+          Window.scrollX +
           "px";
         hoverBox.style.width = element.offsetWidth + "px";
         hoverBox.style.height = element.offsetHeight + "px";
@@ -38,37 +45,7 @@ function toolbar() {
       });
     }
 
-    let selectBox = document.getElementById("selectedElememtcoc");
-
-    if (selectBox) {
-      let toolbar;
-      toolbar = selectBox.querySelector(':scope .toolbar');
-      if(!toolbar ) toolbar = {offsetHeight: 0}
-      selectBox.style.display = "block";
-      canvas.addEventListener("click", (e) => {
-        let element = e.target;
-        if (element.id === "hoveredElementcoc") return;
-        selected = element;
-
-        hoverBox.style.display = "none";
-        selectBox.style.top =
-          canvasIframe.offsetTop +
-          element.offsetTop +
-          canvasWindow.scrollY -
-          toolbar.offsetHeight +
-          "px";
-        selectBox.style.left =
-          canvasIframe.offsetLeft +
-          element.offsetLeft +
-          canvasWindow.scrollX +
-          "px";
-        selectBox.style.width = element.offsetWidth + "px";
-        selectBox.style.height = element.offsetHeight + "px";
-        if (element.offsetTop - toolbar.offsetHeight < 0)
-          selectBox.setAttribute("toolbar-overflow", "");
-        else selectBox.removeAttribute("toolbar-overflow");
-      });
-    }
+ 
   } catch (error) {
     console.error("toolbar didn't initlize", error);
   }
