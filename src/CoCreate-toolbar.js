@@ -16,10 +16,10 @@ function toolbar(selector, event, frame) {
       Document = Window.document || Window.contentDocument;
     }
 
-    let hoverBox = document.querySelector(selector);
-    if (hoverBox) {
+    let box = document.querySelector(selector);
+    if (box) {
       let toolbar;
-      toolbar = hoverBox.querySelector(':scope .toolbar');
+      toolbar = box.querySelector(':scope .toolbar');
       if(!toolbar ) toolbar = {offsetHeight: 0}
       
       Document.addEventListener(event, e => {
@@ -30,24 +30,24 @@ function toolbar(selector, event, frame) {
       
       function update(element){
         
-        hoverBox.style.display = "block";
-        hoverBox.style.top =
+        box.style.display = "block";
+        box.style.top =
           frameElement.offsetTop +
           element.offsetTop +
           Window.scrollY -
           toolbar.offsetHeight +
           "px";
-        hoverBox.style.left =
+        box.style.left =
           frameElement.offsetLeft +
           element.offsetLeft +
           Window.scrollX +
           "px";
-        hoverBox.style.width = element.offsetWidth + "px";
-        hoverBox.style.height = element.offsetHeight + "px";
+        box.style.width = element.offsetWidth + "px";
+        box.style.height = element.offsetHeight + "px";
 
         if ( element.offsetTop - toolbar.offsetHeight < 0 )
-          hoverBox.setAttribute("toolbar-overflow", "");
-        else hoverBox.removeAttribute("toolbar-overflow");
+          box.setAttribute("toolbar-overflow", "");
+        else box.removeAttribute("toolbar-overflow");
       
       }
     }
