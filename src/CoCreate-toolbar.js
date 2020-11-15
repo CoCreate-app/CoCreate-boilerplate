@@ -21,9 +21,15 @@ function toolbar(selector, event, frame) {
       let toolbar;
       toolbar = hoverBox.querySelector(':scope .toolbar');
       if(!toolbar ) toolbar = {offsetHeight: 0}
-
-      Document.addEventListener(event, (e) => {
-        let element = e.target;
+      
+      Document.addEventListener(event, e => {
+        update(e.target)
+        let watch = new ResizeObserver(()=> update(e.target))
+        watch.observe(e.target)
+      });
+      
+      function update(element){
+        
         hoverBox.style.display = "block";
         hoverBox.style.top =
           frameElement.offsetTop +
@@ -42,7 +48,8 @@ function toolbar(selector, event, frame) {
         if ( element.offsetTop - toolbar.offsetHeight < 0 )
           hoverBox.setAttribute("toolbar-overflow", "");
         else hoverBox.removeAttribute("toolbar-overflow");
-      });
+      
+      }
     }
 
  
