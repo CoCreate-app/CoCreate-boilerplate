@@ -15,17 +15,20 @@ function toolbar(selector, event, frame) {
       Window = frame.contentWindow;
       Document = Window.document || Window.contentDocument;
     }
+       
 
     let box = document.querySelector(selector);
     if (box) {
+       let watch = new ResizeObserver(()=> element && update(element))
+      watch.observe(Document.body)
+      
       let toolbar;
       toolbar = box.querySelector(':scope .toolbar');
       if(!toolbar ) toolbar = {offsetHeight: 0}
-      
+      let element;
       Document.addEventListener(event, e => {
         update(e.target)
-        let watch = new ResizeObserver(()=> update(e.target))
-        watch.observe(e.target)
+        element = e.target;
       });
       
       function update(element){
