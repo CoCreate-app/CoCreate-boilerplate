@@ -25,10 +25,27 @@ function toolbar(selector, event, frame, elementConfig) {
       element = e.target;
     });
 
-    Window.addEventListener("scroll", () => {
-      update(element);
-    });
+    Window.addEventListener("scroll", () => element && update(element));
     function update(element) {
+      for (let config of window.cc.configMatch(elementConfig, element))
+        if (event === "click" && config.hoverable === false) return;
+        else if (event === "mouseover" && config.selectable === false) return;
+
+      // for (let config of elementConfig) {
+      //   if (
+      //     event === "click" &&
+      //     config.hoverable === false &&
+      //     element.matches(config.selector)
+      //   )
+      //     return;
+      //   else if (
+      //     event === "mouseover" &&
+      //     config.selectable === false &&
+      //     element.matches(config.selector)
+      //   )
+      //     return;
+      // }
+
       box.style.display = "block";
       box.style.top =
         frameElement.offsetTop +
@@ -45,17 +62,23 @@ function toolbar(selector, event, frame, elementConfig) {
         box.setAttribute("toolbar-overflow", "");
       else box.removeAttribute("toolbar-overflow");
 
-      if (tagName&& tagName.innerHTML !== element.tagName) {
+      if (tagName && tagName.innerHTML !== element.tagName) {
         tagName.innerHTML = element.tagName;
-        for (let config of elementConfig) {
-          if (config.tagName && element.matches(config.selector)) {
-            if(tagName.innerHTML !== config.tagName)
-              tagName.innerHTML = config.tagName;
+
+        // for (let config of elementConfig) {
+        //   if (config.tagName && element.matches(config.selector)) {
+        //     if (tagName.innerHTML !== config.tagName)
+        //       tagName.innerHTML = config.tagName;
+        //     break;
+        //   }
+        // }
+
+        for (let config of window.cc.configMatch(elementConfig, element))
+          if (config.tagName && config.tagName !== tagName.innerHTML) {
+            tagName.innerHTML = config.tagName;
             break;
           }
-        }
       }
-        
     }
   }
 }
