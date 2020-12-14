@@ -1,5 +1,27 @@
+     /**
+   * returns the absolute position of an element regardless of position/float issues
+   * @param {HTMLElement} el - element to return position for 
+   * @returns {object} { x: num, y: num }
+   */
+  function getPosition(el) {
+
+    var x = 0,
+        y = 0;
+
+    while (el != null && (el.tagName || '').toLowerCase() != 'html') {
+        x += el.offsetLeft || 0; 
+        y += el.offsetTop || 0;
+        el = el.offsetParent;
+    }
+
+    return { left: parseInt(x, 10), top: parseInt(y, 10) };
+  }
+  
 let toolbars = {};
 function toolbar({selector, event, frame, elementConfig, configKey}) {
+  
+
+  
   let Window, Document, frameElement;
   if (!frame) {
     frameElement = frame.body;
@@ -19,7 +41,7 @@ function toolbar({selector, event, frame, elementConfig, configKey}) {
     let toolbar = box.querySelector(":scope .toolbar");
     let tagName = box.querySelector(":scope [tagName]");
     if (!toolbar) toolbar = { offsetHeight: 0 };
-    let element;
+    let element = document.createElement('div'); // any component
     Document.addEventListener(event, (e) => {
       update(e.target);
       element = e.target;
@@ -32,7 +54,7 @@ function toolbar({selector, event, frame, elementConfig, configKey}) {
       //   if (event === "click" && config.hoverable === false) return;
       //   else if (event === "mouseover" && config.selectable === false) return;
 
-      window.cc.configExecuter(
+      CoCreateUtils.configExecuter(
         element,
         configKey,
         (element, config, isSelector) => {
@@ -51,17 +73,17 @@ function toolbar({selector, event, frame, elementConfig, configKey}) {
           }
    
 
-            
+          let elPosition = getPosition(element)
           box.style.display = "block";
           box.style.top =
             frameElement.offsetTop +
-            element.offsetTop -
+            elPosition.top -
             Window.scrollY -
             toolbar.offsetHeight +
             "px";
           box.style.left =
             frameElement.offsetLeft +
-            element.offsetLeft +
+            elPosition.left +
             Window.scrollX +
             "px";
           box.style.width = element.offsetWidth + "px";
