@@ -27,12 +27,12 @@ We appreciate your continued support, thank you!
 <a name="announcements"></a>
 # Announcements
 
-All updates to this library are documented in our [CHANGELOG](https://github.com/CoCreate-app/CoCreate-industry/blob/master/CHANGELOG.md) and [releases](https://github.com/CoCreate-app/CoCreate-boilerplate/releases). You may also subscribe to email for releases and breaking changes. 
+All updates to this library are documented in our [CHANGELOG](https://github.com/CoCreate-app/CoCreate-boilerplate/blob/master/CHANGELOG.md) and [releases](https://github.com/CoCreate-app/CoCreate-boilerplate/releases). You may also subscribe to email for releases and breaking changes. 
 
 <a name="roadmap"></a>
 # Roadmap
 
-If you are interested in the future direction of this project, please take a look at our open [issues](https://github.com/CoCreate-app/CoCreate-industry/issues) and [pull requests](https://github.com/CoCreate-app/CoCreate-industry/pulls). We would love to hear your feedback.
+If you are interested in the future direction of this project, please take a look at our open [issues](https://github.com/CoCreate-app/CoCreate-boilerplate/issues) and [pull requests](https://github.com/CoCreate-app/CoCreate-boilerplate/pulls). We would love to hear your feedback.
 
 
 <a name="about"></a>
@@ -47,7 +47,7 @@ CoCreate-boilerplate is maintained and funded by CoCreate. The names and logos f
 <a name="contribute"></a>
 # How to Contribute
 
-We encourage contribution to our libraries (you might even score some nifty swag), please see our [CONTRIBUTING](https://github.com/CoCreate-app/CoCreate-industry/blob/master/CONTRIBUTING.md) guide for details.
+We encourage contribution to our libraries (you might even score some nifty swag), please see our [CONTRIBUTING](https://github.com/CoCreate-app/CoCreate-boilerplate/blob/master/CONTRIBUTING.md) guide for details.
 
 # License
-[The MIT License (MIT)](https://github.com/CoCreate-app/CoCreate-industry/blob/master/LICENSE)
+[The MIT License (MIT)](https://github.com/CoCreate-app/CoCreate-boilerplate/blob/master/LICENSE)
