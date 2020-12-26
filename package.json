@@ -11,8 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/CoCreate-app/CoCreate-boilerplate.git"
   },
-  "author": "Frank Pagan",
-  "license": "ISC",
+  "author": "CoCreate LLC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/CoCreate-app/CoCreate-boilerplate/issues"
   },
