@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/CoCreate-app/CoCreate-boilerplate/issues"
   },
-  "homepage": "https://cocreatejs.com/docs/boilderplate",
+  "homepage": "https://cocreatejs.com/docs/boilerplate",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",

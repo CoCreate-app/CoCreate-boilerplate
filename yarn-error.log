@@ -1,0 +1,68 @@
+Arguments: 
+  /home/ubuntu/.nvm/versions/node/v15.5.1/bin/node /home/ubuntu/.nvm/versions/node/v15.5.1/bin/yarn build
+
+PATH: 
+  /home/ubuntu/.rvm/gems/ruby-2.6.3/bin:/home/ubuntu/.rvm/gems/ruby-2.6.3@global/bin:/home/ubuntu/.rvm/rubies/ruby-2.6.3/bin:/home/ubuntu/.nvm/versions/node/v15.5.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ubuntu/.local/bin:/home/ubuntu/bin:/home/ubuntu/.rvm/bin:/home/ubuntu/.local/bin:/home/ubuntu/bin:/home/ubuntu/.rvm/bin:/home/ubuntu/.rvm/bin:/home/ubuntu/.local/bin:/home/ubuntu/bin:/home/ubuntu/.rvm/bin:/home/ubuntu/.rvm/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  15.5.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/ubuntu/environment/public/CoCreate-components/CoCreate-boilerplate/package.json: Unexpected string in JSON at position 573
+      at JSON.parse (<anonymous>)
+      at /home/ubuntu/.nvm/versions/node/v15.5.1/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/home/ubuntu/.nvm/versions/node/v15.5.1/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /home/ubuntu/.nvm/versions/node/v15.5.1/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "@CoCreate/boilerplate",
+    "version": "1.0.0",
+    "description": "A simple HTML5 and pure javascript component. Easy configuration using data-attributes and/or JavaScript API. Highly customizable and styleable.",
+    "keywords": ["cocreate","no-code-framework","low-code-framework","cocreatejs","cocreatejs-component","cocreate-framework","no-code","low-code","collaborative-framework","realtime","realtime-framework","collaboration","html5","shared-editing","html5-framework","javascript-framework","framework"],
+    "publishConfig": {
+      "access": "public"
+    }
+    "scripts": {
+      "start": "npx webpack --config webpack.config.js --watch",
+      "build": "NODE_ENV=production npx webpack --config webpack.config.js",
+      "docs": "node node_modules/@cocreate/docs/src/index.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/CoCreate-app/CoCreate-boilerplate.git"
+    },
+    "author": "CoCreate LLC",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/CoCreate-app/CoCreate-boilerplate/issues"
+    },
+    "homepage": "https://cocreatejs.com/docs/boilderplate",
+    "devDependencies": {
+      "@babel/core": "^7.12.10",
+      "@babel/preset-env": "^7.12.11",
+      "babel-loader": "^8.2.2",
+      "clean-webpack-plugin": "^3.0.0",
+      "html-webpack-plugin": "^4.5.0",
+      "uglifyjs-webpack-plugin": "^2.2.0",
+      "webpack": "^5.14.0",
+      "webpack-cli": "^4.3.1",
+      "webpack-log": "^3.0.1"
+    },
+    "dependencies": {
+      "@cocreate/docs": "^1.0.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

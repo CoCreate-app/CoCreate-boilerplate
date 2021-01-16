@@ -1,0 +1,10 @@
+{
+  "name": "CoCreateGithubActions",
+  "version": "1.0",
+  "description": "CoCreateGithubActions",
+  "author": "Frankie Pagan",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "aws-sdk": "^2.820.0"
+  }
+}
