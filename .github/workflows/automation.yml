@@ -58,10 +58,10 @@ jobs:
       - run: yarn build
 
       
-      - name: make ready to upload to s3
-        run: (cd ./.github/workflows/  && yarn install)
+      # - name: make ready to upload to s3
+      #   run: (cd ./.github/workflows/  && yarn install)
       - name: upload to s3
-        run: node ./.github/workflows/upload_s3.js 
+        run: npm run s3
         env:
           AWSKEYID: ${{ secrets.AWSKEYID }}
           AWSACCESSKEY: ${{ secrets.AWSACCESSKEY }}

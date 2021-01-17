@@ -2,14 +2,15 @@
   "name": "@CoCreate/boilerplate",
   "version": "1.0.0",
   "description": "A simple HTML5 and pure javascript component. Easy configuration using data-attributes and/or JavaScript API. Highly customizable and styleable.",
-  "keywords": ["cocreate","no-code-framework","low-code-framework","cocreatejs","cocreatejs-component","cocreate-framework","no-code","low-code","collaborative-framework","realtime","realtime-framework","collaboration","html5","shared-editing","html5-framework","javascript-framework","framework"],
+  "keywords": ["cocreate","no-code-framework","low-code-framework","cocreatejs","cocreatejs-component","cocreate-framework","no-code","low-code","collaborative-framework","realtime","realtime-framework","collaboration","shared-editing","html5-framework","javascript-framework"],
   "publishConfig": {
     "access": "public"
-  }
+  },
   "scripts": {
     "start": "npx webpack --config webpack.config.js --watch",
     "build": "NODE_ENV=production npx webpack --config webpack.config.js",
-    "docs": "node node_modules/@cocreate/docs/src/index.js"
+    "docs": "node node_modules/@cocreate/docs/src/index.js",
+    "s3": "node node_modules/@cocreate/s3/src/CoCreate-s3.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "webpack-log": "^3.0.1"
   },
   "dependencies": {
-    "@cocreate/docs": "^1.0.3"
+    "@cocreate/docs": "^1.0.3",
+    "@cocreate/s3": "^1.0.1"
   }
 }
