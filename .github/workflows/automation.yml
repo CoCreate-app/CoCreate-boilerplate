@@ -2,39 +2,34 @@ name: CI
 
 on:
   push:
+    branches:
+    - master
   pull_request:
+    branches:
+    - master
   create:
+    branches:
+    - master
 
 jobs:
-  changelog:
+  updateKeyword:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      # debuging action
-      # - name: Setup tmate session
-      #   uses: mxschmitt/action-tmate@v3
-      
-      
-      # - uses: actions/setup-node@v1
-      #   with:
-      #     node-version: 12
-      #     registry-url: https://npm.pkg.github.com/
-      #     scope: '@cocreate-app'
-      # - run: npm publish --access=public
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{secrets.GITHUB}}
-            
           
-  # overwrite description and keyworkds
       - name: Jaid/action-sync-node-meta
         uses: jaid/action-sync-node-meta@v1.4.0
         with:
           direction: overwrite-github # default is overwrite-file
           githubToken: ${{ secrets.GITHUB }}
   
-  # Auto Changog generator
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v2
         with:
@@ -46,26 +41,27 @@ jobs:
             @semantic-release/github
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      
-      - name: setup nodejs
-        uses: actions/setup-node@v2
-        with:
-          node-version: 'v10.16.0'
-          
-      # - name: build production version
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
-
-      
-      # - name: make ready to upload to s3
-      #   run: (cd ./.github/workflows/  && yarn install)
-      - name: upload to s3
-        run: npm run s3
-        env:
-          AWSKEYID: ${{ secrets.AWSKEYID }}
-          AWSACCESSKEY: ${{ secrets.AWSACCESSKEY }}
-          DIST_FILE_NAME: './dist/CoCreate-styles.min.js'
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}  # Auto Changog generator
+           
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       
       - name: update documentation
-        run: npm run docs
+        uses: CoCreate-app/CoCreate-docs@master
+          
+  
+  cdn:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+          
+      - name: upload cdn
+        uses: CoCreate-app/CoCreate-s3@master
+        with:
+          aws-key-id: ${{ secrets.AWSACCESSKEYID }}
+          aws-access-key: ${{ secrets.AWSSECERTACCESSKEY }}
+          source: './dist/CoCreate-boilerplate.min.js'
