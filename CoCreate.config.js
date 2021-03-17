@@ -9,7 +9,7 @@ module.exports = {
     sources: [{
             path: "./docs/index.html",
             collection: "files",
-            document_id: "6019b6c04eea0817df303b08",
+            document_id: "",
             key: "html",
             data:{
                 name: "boilerplate Doc",
@@ -19,10 +19,10 @@ module.exports = {
    
     crud: [{
             collection: "routes",
-            document_id: "6019b6c04eea0817df303b07",
+            document_id: "",
             data:{
                 collection: "files",
-                document_id: "6019b6c04eea0817df303b08",
+                document_id: "",
                 name: "html",
                 domains: ["cocreate.app", "server.cocreate.app", "ws.cocreate.app"],
                 route: "/docs/boilerplate",
