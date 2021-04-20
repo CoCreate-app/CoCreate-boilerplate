@@ -1,6 +1,6 @@
 const path = require("path")
 const TerserPlugin = require("terser-webpack-plugin")
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 let isProduction = process.env.NODE_ENV === "production"
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
@@ -15,10 +15,15 @@ module.exports = {
     libraryExport: "default",
     library: ["CoCreate", "boilerplate"],
     globalObject: "this",
-    publicPath: "https://server.cocreate.app/CoCreateJS/dist/",
+    // publicPath: 'https://server.cocreate.app/CoCreateJS/dist/'
   },
 
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+    }),
+  ],
   // Default mode for Webpack is production.
   // Depending on mode Webpack will apply different things
   // on final bundle. For now we don't need production's JavaScript
@@ -69,8 +74,9 @@ module.exports = {
     splitChunks: {
       chunks: "all",
       minSize: 200,
-      // maxSize: 999999999,
+      // maxSize: 99999,
       //minChunks: 1,
+
       cacheGroups: {
         defaultVendors: false,
       },
