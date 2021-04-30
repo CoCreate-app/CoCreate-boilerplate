@@ -1,6 +1,6 @@
 # CoCreate-boilerplate
 
-A simple boilerplate component in vanilla javascript. Easily configured using HTML5 data-attributes and/or JavaScript API. Take it for a spin in our [playground!](https://cocreate.app/docs/boilerplate)
+A convenient chain handler allows user to chain multiple CoCreate components together. When one boilerplate is complete next one will start. The sequence goes untill all boilerplates completed. Grounded on Vanilla javascript, easily configured using HTML5 data-attributes and/or JavaScript API. Take it for a spin in our [playground!](https://cocreate.app/docs/boilerplate)
 
 ![GitHub file size in bytes](https://img.shields.io/github/size/CoCreate-app/CoCreate-boilerplate/dist/CoCreate-boilerplate.min.js?label=minified%20size&style=for-the-badge)
 ![GitHub latest release](https://img.shields.io/github/v/release/CoCreate-app/CoCreate-boilerplate?style=for-the-badge)
@@ -26,7 +26,7 @@ For a complete guide and working demo refer to the [doumentation](https://cocrea
 ## NPM
 
 ```shell
-$ npm install @cocreate/boilerplate
+$ npm i @cocreate/boilerplate
 ```
 
 # Table of Contents
