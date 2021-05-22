@@ -1,6 +1,5 @@
 //Read list Implementation
-import observer from '@cocreate/observer'
-import ccfilter from '@cocreate/filter'
+import filter from '@cocreate/filter'
 import crud from '@cocreate/crud-client';
 import logic from '@cocreate/logic';
 import render from '@cocreate/render';
@@ -9,7 +8,7 @@ import render from '@cocreate/render';
 const {fetch_collection, is_collection_fetch, fetch_count} = crud.GetFetchAttr(el) //namespace, room, broadcast, broadcat_sender, 
 
 
-var filter = CoCreateFilter.setFilter(
+var filters = CoCreateFilter.setFilter(
 	el, 
 	attrName, /* default value = data-template_id*/ 
 	type, /* default value = template*/
