@@ -1,6 +1,6 @@
 {
   "name": "@cocreate/boilerplate",
-  "version": "1.1.1",
+  "version": "1.0.0",
   "description": "A simple boilerplate component in vanilla javascript. Easily configured using HTML5 data-attributes and/or JavaScript API.",
   "keywords": [
     "boilerplate",
@@ -61,7 +61,7 @@
     "webpack-log": "^3.0.1"
   },
   "dependencies": {
-    "@cocreate/docs": "^1.0.3",
-    "@cocreate/hosting": "^1.0.0"
+    "@cocreate/docs": "^1.2.26",
+    "@cocreate/hosting": "^1.2.22"
   }
 }
