@@ -8,8 +8,7 @@ crud.listen('deleteDocument', function(data) { doSomething })
 
 // CRUD Implementation
 const el = document.querySelector('xxx') // el is dom element  
-const {collection, document_id, name} = crud.GetAttr(el) //namespace, room, broadcast, broadcat_sender
-const {is_realtime, is_read, is_save, is_update} = crud.getFlagAttr(el)
+const {collection, document_id, name, is_realtime, is_read, is_save, is_listen} = crud.GetAttr(el) //namespace, room, broadcast, broadcat_sender
 const is_crdt = crud.isCrdt(el) // used by crud only to dertimine if crdt exists... 
 
 var c = await crud.createDocument({collection, uid: "unique string"}) // {namespace, room, broadcast, broadcat_sender, ...}

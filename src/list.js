@@ -10,7 +10,7 @@ const {fetch_collection, is_collection_fetch, fetch_count} = crud.GetFetchAttr(e
 
 var filters = CoCreateFilter.setFilter(
 	el, 
-	attrName, /* default value = data-template_id*/ 
+	attrName, /* default value = template_id*/ 
 	type, /* default value = template*/
 )
 
@@ -19,24 +19,24 @@ filter = {
 	id, 			/* element id */
 	el, 			/* element */
 	type,			/* type in input parameter */
-	collection, 	/* data-fetch_collection */
-	is_collection,	/* data-fetch_value_type == collection ? true : false */
+	collection, 	/* fetch-collection */
+	is_collection,	/* fetch-value_type == collection ? true : false */
 	startIndex, 	/* init value = 0 */
 	search: {
 		type: 'or',	/* or */
-		value:[],	/* Array:data-filter_value without data-filter_name */
+		value:[],	/* Array:filter-value without filter-name */
 	}, 
 	orders: [{
-		name,		/* data-order_by */
-		type,		/* data-order_type == 'asc' ? 1 : -1 */
+		name,		/* order-by */
+		type,		/* order-type == 'asc' ? 1 : -1 */
 	}],			
 	filters: [{
-		name,		/* data-filter_name */
-		value:[],	/* data-filter_value by data-filter_value_type(string|raw|number) : Array */
-		operator,	/* data-filter_operator */
-		type		/* data-filter_type */
+		name,		/* filter-name */
+		value:[],	/* filter-value by filter-value_type(string|raw|number) : Array */
+		operator,	/* filter-operator */
+		type		/* filter-type */
 	}],
-	count,			/* data-fetch_count */
+	count,			/* fetch-count */
 }
 
 crud.readDocumentList({
@@ -60,9 +60,9 @@ crud.readDocumentList({
 
 
 	// let f_el = filter_objs[i];
-	// let filter_name = f_el.getAttribute('data-filter_name');
-	// let filter_operator = f_el.getAttribute('data-filter_operator') ? f_el.getAttribute('data-filter_operator') : '$contain';
-	// let value_type = f_el.getAttribute('data-filter_value_type') ? f_el.getAttribute('data-filter_value_type') : 'string';
-	// let filter_type = f_el.getAttribute('data-filter_type');
-	// let filter_value = f_el.getAttribute('data-filter_value');
-	// let value = this.getAttribute('data-toggle_order') || '';
+	// let filter_name = f_el.getAttribute('filter-name');
+	// let filter_operator = f_el.getAttribute('filter-operator') ? f_el.getAttribute('filter-operator') : '$contain';
+	// let value_type = f_el.getAttribute('filter-value_type') ? f_el.getAttribute('filter-value_type') : 'string';
+	// let filter_type = f_el.getAttribute('filter-type');
+	// let filter_value = f_el.getAttribute('filter-value');
+	// let value = this.getAttribute('toggle-order') || '';
