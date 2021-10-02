@@ -5,7 +5,7 @@ import logic from '@cocreate/logic';
 import render from '@cocreate/render';
 
 
-const {fetch_collection, is_collection_fetch, fetch_count} = crud.GetFetchAttr(el) //namespace, room, broadcast, broadcat_sender, 
+const {fetch_collection, is_collection_fetch, fetch_count} = crud.getFetchAttr(el) //namespace, room, broadcast, broadcat_sender, 
 
 
 var filters = CoCreateFilter.setFilter(
