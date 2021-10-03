@@ -21,7 +21,7 @@
     "javascript-framework"
   ],
   "publishConfig": {
-    "access": "private"
+    "access": "public"
   },
   "scripts": {
     "start": "npx webpack --config webpack.config.js",
