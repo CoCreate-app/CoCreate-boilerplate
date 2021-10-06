@@ -12,12 +12,12 @@ module.exports = {
             "key": "src",
             "data":{
                 "name": "index.html",
-                "path": "/docs/selection/index.html",
+                "path": "/docs/boilerplate/index.html",
                 "domains": [
                     "cocreate.app",
                     "general.cocreate.app"
                 ],
-                "directory": "/docs/selection",
+                "directory": "/docs/boilerplate",
                 "content-type": "text/html",
                 "public": "true",
                 "website_id": "5ffbceb7f11d2d00103c4535"
