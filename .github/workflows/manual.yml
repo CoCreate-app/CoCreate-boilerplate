@@ -39,6 +39,6 @@ jobs:
           distributionId: "${{ secrets.DISTRIBUTION_ID }}"
           bucket: testcrudbucket
           source: ./dist
-          destination: /boilerplate/latest
+          destination: /selection/latest
           acl: public-read
           invalidations: ${{ github.event.inputs.invalidations }}

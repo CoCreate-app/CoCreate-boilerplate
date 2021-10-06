@@ -1,9 +1,9 @@
 {
-  "name": "@cocreate/boilerplate",
+  "name": "@cocreate/selection",
   "version": "1.0.0",
-  "description": "A simple boilerplate component in vanilla javascript. Easily configured using HTML5 data-attributes and/or JavaScript API.",
+  "description": "A simple selection component in vanilla javascript. Easily configured using HTML5 data-attributes and/or JavaScript API.",
   "keywords": [
-    "boilerplate",
+    "selection",
     "cocreate",
     "low-code-framework",
     "no-code-framework",
@@ -32,14 +32,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CoCreate-app/CoCreate-boilerplate.git"
+    "url": "git+https://github.com/CoCreate-app/CoCreate-selection.git"
   },
   "author": "CoCreate LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CoCreate-app/CoCreate-boilerplate/issues"
+    "url": "https://github.com/CoCreate-app/CoCreate-selection/issues"
   },
-  "homepage": "https://cocreate.app/docs/boilerplate",
+  "homepage": "https://cocreate.app/docs/selection",
   "funding": {
     "type": "GitHub Sponsors ❤",
     "url": "https://github.com/sponsors/CoCreate-app"

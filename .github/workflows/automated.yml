@@ -61,7 +61,7 @@ jobs:
           aws-access-key: "${{ secrets.AWSSECERTACCESSKEY }}"
           bucket: testcrudbucket
           source: ./dist
-          destination: "/boilerplate/${{env.VERSION}}"
+          destination: "/selection/${{env.VERSION}}"
           acl: public-read
       - name: upload bundle as latest
         uses: CoCreate-app/CoCreate-s3@master
@@ -70,7 +70,7 @@ jobs:
           aws-access-key: "${{ secrets.AWSSECERTACCESSKEY }}"
           bucket: testcrudbucket
           source: ./dist
-          destination: /boilerplate/latest
+          destination: /selection/latest
           acl: public-read
           invalidations: true
   docs:
