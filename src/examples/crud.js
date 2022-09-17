@@ -14,4 +14,4 @@ var c = await crud.createDocument({collection, data: {name:value}}) // {namespac
 var r = await crud.readDocument({collection, document_id, name}) // {async, event,  ...}
 var u = await crud.updateDocument({collection, document_id, data: {name:value}}) // {namespace, room, broadcast, broadcat_sender, async, event, delete_fields ...}
 var d = await crud.deleteDocument({collection, document_id}) // {namespace, room, broadcast, broadcat_sender, async, event, ...}
-var s = await crud.readDocumentList({collection}) // {operator: {fetch, filter, order, search, startIndex}, is_collection, async, event, ...}
+var s = await crud.readDocumentList({collection}) // {filter: {fetch, query, sort, search, startIndex}, async, event, ...}
