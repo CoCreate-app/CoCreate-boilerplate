@@ -83,7 +83,7 @@ function initElement(container)
 			const { collection, document_id,  } = crud.getAttr(el);
 
 			if (document_id && collection) {
-				// crud.readDocument({ collection, document_id })
+				// crud.readDocument({ collection, document_id, document: {_id}})
 			}
 		})
 }
@@ -167,11 +167,11 @@ async function saveElement(element, value)
 	    namespace,
 	    room,
 	    collection,
-	    document_id,
 	    upsert: true, 
 	    broadcast,
 	    broadcast_sender,
-	    data: {
+	    document: {
+			_id: document_id,
 	      [name]: value
 	    },
 	  })

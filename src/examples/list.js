@@ -1,9 +1,14 @@
 //Read list Implementation
 import filter from '@cocreate/filter'
-import crud from '@cocreate/crud-client';
+import CRUD from '@cocreate/crud-client';
 import logic from '@cocreate/logic';
 import render from '@cocreate/render';
 
+let crud
+if(CRUD && CRUD.default)
+	crud = CRUD.default
+else
+	crud = CRUD
 
 const {fetch_collection, is_collection_fetch, fetch_count} = crud.getFetchAttr(el) //namespace, room, broadcast, broadcat_sender, 
 
