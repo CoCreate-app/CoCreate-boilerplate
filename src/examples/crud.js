@@ -8,7 +8,7 @@ crud.listen('deleteDocument', function(data) { doSomething })
 
 // CRUD Implementation
 const el = document.querySelector('xxx') // el is dom element  
-const {collection, document_id, name, isRealtime, isRead, isSave, isListen} = crud.GetAttr(el) //namespace, room, broadcast, broadcat_sender
+const {collection, document_id, name, isRealtime, isRead, isSave, isListen} = crud.getAttributes(el) //namespace, room, broadcast, broadcat_sender
 
 var c = await crud.createDocument({collection, document: {name:value}}) // {namespace, room, broadcast, broadcat_sender, ...}
 var r = await crud.readDocument({collection, document: {_id, name}}) // {filter, async, event,  ...}

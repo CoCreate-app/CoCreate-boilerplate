@@ -18,7 +18,7 @@ function initElements(elements) {
 }
 
 function initElement(element) {
-    const { collection, document_id, name, isRealtime, isCrdt } = crud.getAttr(element);
+    const { collection, document_id, name, isRealtime, isCrdt } = crud.getAttributes(element);
     // Do something...
 }
 

@@ -3,9 +3,9 @@ import crdt from "@cocreate/crdt"
 import crud from "@cocreate/crud-client"
 
 // CRDT Implementaion
-const {collection, document_id, name} = crud.GetAttr()
+const {collection, document_id, name} = crud.getAttributes()
 
-crdt.init({ collection, document_id, name, element/* DOM element */ })
+crdt.init({ collection, document_id, name})
 crdt.getText({ collection, document_id, name })
 crdt.insertText({ collection, document_id, name, value, position })
 crdt.deleteText({ collection, document_id, name, position, length })
